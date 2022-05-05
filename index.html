@@ -16,15 +16,7 @@
 
     <title>Document</title>
 
-
-
-
-
 </head>
-
-
-
-
 
 
 <body>
@@ -34,29 +26,31 @@
         <thead>
             <tr>
                 <th>
-                    Nom
+                    Toutes les Notes
                 </th>
                 <th>
-                    Notes
+                    
                 </th>
-                <th>
-                    ajouter
-                </th>
+                
             </tr>
         </thead>
         <tbody>
-            <th><input type="text" id="nomA" value=""></th>
-            <th><input type="text" id="notesA" value=""></th>
+            <!-- <th><input type="text" id="nomA" value=""></th> -->
+            <th><input type="text" id="notesA" value="" placeholder="12+13+14..." pattern="[0-9]"></th>
             <!-- <th><input type="text" id="demo" value=""></th> -->
             <th><button type="button" class="btn btn-primary" value="" onclick="ajouterVal()">Ajouter</button></th>
+            <th><button type="button" class="btn btn-primary" value="" onclick="afficherval()">Afficher</button></th>
             
         </tbody>
 
     </table>
 
+    <P id="demo"></P>
     <p id="loop"></p>
+    <p id="final"></p>
+  
 
 </body>
 
-
+<script src="main.js"></script>
 </html>
