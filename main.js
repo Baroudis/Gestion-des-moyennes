@@ -1,16 +1,13 @@
 
 var montableau = []
 var nom = "";
-//var notes = "";
-
-
 
 
 function ajouterVal() {
 
   notes = document.getElementById("notesA").value
   montableau.push(notes)
-  // console.log(montableau)
+
 
   montableau.forEach(function (item, index, array) {
 
@@ -18,10 +15,13 @@ function ajouterVal() {
 
     if (index + 1 == 1) {
       tousaffi += document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}er chiffre  qui est ${item}     </p>`
+      document.getElementById("notesA").value = "";
+
 
       console.log(tousaffi)
     } else {
       document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}em chiffre qui est ${item}     </p>`
+      document.getElementById("notesA").value = "";
     }
     console.log(item, index + 1);
     console.log(montableau)
@@ -69,28 +69,22 @@ function afficherval() {
   console.log(total)
 
   lignes = ""
-
-  para = "<th>#</th><th>Moyenne : "+ total +"</th><th>Remarque</th>"
+  para = "<th>#</th><th>Moyenne : " + total + "</th><th>Remarque</th>"
   finall = ""
+
   montableau.forEach(afficherT)
-
-
-
-
-
   document.getElementById("loop").innerHTML = para
 
   function afficherT(item, index) {
 
-    
+
 
     if (item < total) {
-      para += "<tr class='red'><th>Moyenne numero : " + index + 1 + "</th><td>" + item + "</td><td>Au boulot !!</td></tr>";
-      // console.log(item, total);
-      // console.log(para);
+      para += "<tr class='red'><th>Moyenne numero : " + (index + 1) + "</th><td>" + item + "</td><td>Au boulot !!</td></tr>";
+
     } else if (item == total) {
       para += `<tr class="orange"><th>Moyenne numero : ${index + 1}</th><td>${item}</td><td>Pile poile la moyenne</td></tr>`;
-      //console.log(item, total)
+
     } else {
       para += `<tr class="green"><th>Moyenne numero : ${index + 1}</th><td>${item}</td><td>Bravo vous avez plus que la moyenne</td></tr>`;
     }
@@ -104,7 +98,6 @@ function retourN() {
   document.getElementById('ap').classList.remove("d-none");
   document.getElementById('retourAffi').classList.add("d-none");
   document.getElementById('loop').classList.add('d-none');
-
 }
 
 

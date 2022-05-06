@@ -65,7 +65,7 @@ input:focus{
     background-color: transparent;
     background-clip: padding-box;
     border: 1px solid #28a745;
-    border-radius: 0;
+    border-radius: 10px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -119,4 +119,10 @@ td, tr{
 }
 .dr{
     margin-left: 300px;
+}
+.tabli{
+    border: 1px solid #28a745;
+}
+.enume{
+    margin-top: 10px;
 }
