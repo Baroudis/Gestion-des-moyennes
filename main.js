@@ -14,13 +14,13 @@ function ajouterVal() {
     tousaffi = ""
 
     if (index + 1 == 1) {
-      tousaffi += document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}er chiffre  qui est ${item}     </p>`
+      tousaffi += document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}er chiffre  qui est ${item}</p>`
       document.getElementById("notesA").value = "";
 
 
       console.log(tousaffi)
     } else {
-      document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}em chiffre qui est ${item}     </p>`
+      document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}em chiffre qui est ${item}</p>`
       document.getElementById("notesA").value = "";
     }
     console.log(item, index + 1);
@@ -100,5 +100,8 @@ function retourN() {
   document.getElementById('loop').classList.add('d-none');
 }
 
+function retourDebut() {
+  location.reload();
+}
 
 
