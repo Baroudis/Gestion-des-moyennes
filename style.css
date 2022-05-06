@@ -114,6 +114,9 @@ td, tr{
     text-align: center;
 }
 #loop{
-    width:500px;
-    margin-left: 50px;
+    width:600px;
+    margin-left: 300px;
+}
+.dr{
+    margin-left: 300px;
 }
