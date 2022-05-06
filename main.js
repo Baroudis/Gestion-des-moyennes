@@ -17,11 +17,11 @@ function ajouterVal() {
         tousaffi = ""
     
         if (index + 1 == 1) {
-          tousaffi += document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le${index + 1}er chiffre  qui est ${item}     </p>`
+          tousaffi += document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}er chiffre  qui est ${item}     </p>`
     
           console.log(tousaffi)
         } else {
-          document.getElementById("demo").innerHTML = `<p> ${index + 1}em :  qui est ${item}     </p>`
+          document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}em chiffre qui est ${item}     </p>`
         }
         console.log(item, index + 1);
         console.log(montableau)
@@ -37,6 +37,8 @@ function ajouterVal() {
 
 
 function afficherval() {
+
+  document.getElementById('ap').classList.add("d-none");
 
   chaine = 0;
 
@@ -66,17 +68,30 @@ function afficherval() {
   
   lignes = ""
 
-para = "" 
-finall= ""
-montableau.forEach(afficherT)
-document.getElementById("loop").innerHTML = para
+  para = "" 
+  finall= ""
+  montableau.forEach(afficherT)
+  document.getElementById("loop").innerHTML = para
 
-function afficherT(item, index){
-  para += index+1 + ": " + item +"<br>"
+  function afficherT(item, index){
+
+    if(item < total){
+      para += "<tr class='red'><th>Moyenne numero : " + index+1 + "</th><td>" + item + "</td></tr>";
+      // console.log(item, total);
+      // console.log(para);
+    }else if(item == total){
+      para += `<tr class="orange"><th>Moyenne numero : ${index+1}</th><td>${item}</td></tr>`;
+      //console.log(item, total)
+    }else {
+      para += `<tr class="green"><th>Moyenne numero : ${index+1}</th><td>${item}</td></tr>`;
+    }
+
+  }
+
 
 }
-if(total > 10){
-  document.getElementById("final").innerHTML = `<p style="color:green"> Bravo vous avez plus que la moyenne avec le score de ${total}`
-}else{}
 
-    }
+
+
+
+
