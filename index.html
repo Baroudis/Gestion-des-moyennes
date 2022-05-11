@@ -14,7 +14,7 @@
     <!-- CSS Perso -->
     <link rel="stylesheet" href="style.css">
     <!-- JS Perso -->
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
 
     <title>Document</title>
 
@@ -29,21 +29,19 @@
             <tr>
                 <th>
                     <h1>Toutes les Moyennes</h1>
+                    <button onclick="theme()">Dark mode</button>
                 </th>
                 <th>
-
                 </th>
-
             </tr>
         </thead>
         <tbody>
-            
         </tbody>
     </table>
 
 
 
-    <div class="container" id="ap" >
+    <div class="container" id="ap">
         <div class="card card-login mx-auto text-center bg-dark">
             <div class="card-header mx-auto bg-dark">
                 <span><img src="img/calcul.png" class="w-75 ret" alt="Logo"></span><br />
@@ -54,11 +52,12 @@
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                         </div>
-                        <input type="text" id="notesA" class="form-control rounded-2" value="" placeholder=""
+                        <input type="text" id="prenomA" class="form-control rounded-2" value="" placeholder="Prénom"
+                        pattern="[0-9]">
+                        <input type="text" id="notesA" class="form-control rounded-2" value="" placeholder="Moyenne"
                             pattern="[0-9]">
-                        <P id="demo" class="enume"></P>
-                        
                     </div>
+                    <P id="demo" class="enume"></P>
                     <div class="form-group log">
                         <input type="button" value="Ajouter" onclick="ajouterVal()"
                             class="btn btn-outline-danger float-right login_btn">
@@ -74,10 +73,18 @@
     <table class="table table-dark table-hover tabli" id="loop">
 
     </table>
-<button type="button" id ="retourAffi" class="btn btn-primary d-none dr" value="" onclick="retourN()" >Retour</button>
-<button type="button" id ="resetout" class="btn btn-primary  dr" value="" onclick="retourDebut()" >Reset</button>
+
+
+    <button type="button" id="retourAffi" class="btn btn-primary d-none dr" value="" onclick="retourN()">Retour</button>
+    <button type="button" id="resetout" class="btn btn-primary  dr" value="" onclick="retourDebut()">Reset</button>
+
+    <p id="pluo"></p>
+    
+
+
+ <script src="main.js"></script>   
 </body>
 
-<script src="main.js"></script>
+
 
 </html>

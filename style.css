@@ -1,5 +1,5 @@
 body {
-    background: #000 !important;
+    /*background: #000 !important;*/
     /*background-color: #ced4da;*/
 }
 .card {
@@ -97,10 +97,10 @@ p{
     margin-left: 10px;
     font-family: Georgia, serif;
 } 
- h1{
+ /* h1{
     color: white;
     text-align: center;
-} 
+}  */
 .red{
     color: #ff0000 !important;
 }
@@ -125,4 +125,8 @@ td, tr{
 }
 .enume{
     margin-top: 10px;
+}
+.dark-mode {
+    background-color: black;
+    color: white;
 }

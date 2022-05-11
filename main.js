@@ -1,12 +1,35 @@
+var lenom = "";
+var leprenom = "";
+var lage = "";
+var notes = "";
+var objtable = {};
 
-var montableau = []
+
 var nom = "";
-
+const montableau = [];
 
 function ajouterVal() {
 
   notes = document.getElementById("notesA").value
-  montableau.push(notes)
+  leprenom = document.getElementById("prenomA").value
+
+  objtable = {
+    Nom: lenom,
+    Prénom: leprenom,
+    age: lage,
+    notes: notes
+  };
+  //objtable = notes
+  //montableau.push(objtable);
+  //montableau.push(notes)
+  montableau.push(objtable)
+
+  console.log(montableau)
+
+  //objtable.push(notes)
+  
+  //noti = objtable.notes
+//console.log(noti)
 
 
   montableau.forEach(function (item, index, array) {
@@ -14,25 +37,42 @@ function ajouterVal() {
     tousaffi = ""
 
     if (index + 1 == 1) {
-      tousaffi += document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}er chiffre  qui est ${item}</p>`
+      tousaffi += document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}er chiffre  qui est ${objtable.notes}</p>`
       document.getElementById("notesA").value = "";
+      document.getElementById("prenomA").value = "";
 
 
-      console.log(tousaffi)
+     // console.log(tousaffi)
     } else {
-      document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}em chiffre qui est ${item}</p>`
-      document.getElementById("notesA").value = "";
+      document.getElementById("demo").innerHTML = `<p>Vous avez ajouté le ${index + 1}em chiffre qui est ${objtable.notes}</p>`
+
     }
-    console.log(item, index + 1);
-    console.log(montableau)
-  })
+    //console.log(item, index + 1);
+    //console.log(montableau)
+    //console.log(objtable.notes)
+
+
+    // var sum = "";
+    // sum += objtable.notes
+    //console.log(objtable)
+    //console.log(sum)
+  });
   tousaffi += tousaffi
 
-  return montableau
+
+//console.log(sum)
+
+  //console.log(objtable.notes)
+  
+
+  //return montableau
 
 }
 
 
+console.log(montableau)
+//console.log(montableau[0].notes)
+//console.log(objtable.notes)
 
 
 
@@ -42,12 +82,27 @@ function afficherval() {
   document.getElementById('retourAffi').classList.remove("d-none");
   document.getElementById('loop').classList.remove('d-none');
 
+  //console.log(montableau)
+
   chaine = 0;
 
   for (i = 0; i < montableau.length; i++) {
-    chaine += ` + ${montableau[i]}`;
+    //arf = objtable.notes
+    chaine += ` + ${montableau[i].notes}`;  // ${montableau[i]}
+
+    console.log(chaine)
+    console.log(objtable.notes)
+
+    console.log(Math.max(objtable.notes))  // note la plus haute
+
   }
-  console.log(chaine)
+  // o = Math.max(objtable.notes);
+  // document.getElementById('pluo').innerHTML = "voici" + o
+
+  
+  //console.log(chaine)
+  //console.log(montableau.length)
+  //console.log(objtable.prenom)
 
 
 
@@ -62,6 +117,7 @@ function afficherval() {
   }
 
   prix = sumStr(chaine)
+  //prix = objtable.note[i] + 
   largeur = montableau.length
   total = prix / montableau.length
   console.log(largeur)
@@ -75,18 +131,19 @@ function afficherval() {
   montableau.forEach(afficherT)
   document.getElementById("loop").innerHTML = para
 
+
   function afficherT(item, index) {
 
 
+    if (item.notes < total) {
+      para += `<tr class="red"><th>Moyenne numero : ${index + 1}</th><td> ${item.notes}</td><td>Au boulot !!</td></tr>`;
 
-    if (item < total) {
-      para += "<tr class='red'><th>Moyenne numero : " + (index + 1) + "</th><td>" + item + "</td><td>Au boulot !!</td></tr>";
-
-    } else if (item == total) {
-      para += `<tr class="orange"><th>Moyenne numero : ${index + 1}</th><td>${item}</td><td>Pile poile la moyenne</td></tr>`;
+    } else if (item.notes == total) {
+      para += `<tr class="orange"><th>Moyenne numero : ${index + 1} </th><td>${item.notes}</td><td>Pile poile la moyenne</td></tr>`;
 
     } else {
-      para += `<tr class="green"><th>Moyenne numero : ${index + 1}</th><td>${item}</td><td>Bravo vous avez plus que la moyenne</td></tr>`;
+      para += `<tr class="green"><th>Moyenne numero : ${index + 1}</th><td>${item.notes}</td><td>Bravo vous avez plus que la moyenne</td></tr>`;
+      console.log(item)
     }
 
   }
@@ -102,6 +159,11 @@ function retourN() {
 
 function retourDebut() {
   location.reload();
+}
+
+function theme() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
 }
 
 
